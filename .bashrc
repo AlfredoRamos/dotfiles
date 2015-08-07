@@ -21,4 +21,8 @@ man() {
 	man "$@"
 }
 
+# Default editor
 export EDITOR=vim
+
+# Ruby executable path
+export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
