@@ -1,5 +1,5 @@
 #
-# ~/.bashrc
+# $XDG_CONFIG_HOME/.bashrc
 #
 
 # If not running interactively, don't do anything

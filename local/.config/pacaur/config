@@ -1,0 +1,7 @@
+#!/bin/bash --
+
+#
+# $XDG_CONFIG_HOME/pacaur/config
+#
+
+editpkgbuild=false	# edit PKGBUILD and install scripts

@@ -1,3 +1,7 @@
+"
+" $XDG_CONFIG_HOME/.vimrc
+"
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
