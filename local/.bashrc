@@ -21,6 +21,9 @@ man() {
 	man "$@"
 }
 
+# xterm 256 colors
+export TERM=xterm-256color
+
 # Default editor
 export EDITOR=vim
 
