@@ -1,7 +1,3 @@
-"
-" $XDG_CONFIG_HOME/.vimrc
-"
-
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -121,3 +117,8 @@ endif
 set backupdir=/tmp
 set directory=/tmp
 set undodir=/tmp
+
+" Set 4 spaces tab size
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
