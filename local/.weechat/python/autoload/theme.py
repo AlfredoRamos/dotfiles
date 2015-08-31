@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+#
+# $HOME/.weechat/python/autoload/theme.py
+#
+
 #
 # Copyright (C) 2011-2015 Sébastien Helleu <flashcode@flashtux.org>
 #
