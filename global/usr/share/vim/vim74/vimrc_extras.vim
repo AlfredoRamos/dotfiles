@@ -23,3 +23,29 @@ set undodir=/tmp
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" Display tabs and trailing spaces
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
+" Show max text width
+set colorcolumn=+1
+
+" Backspacing
+set backspace=indent,eol,start
+
+" Statusline
+if has('statusline')
+  set laststatus=2             " Always show statusline
+  set statusline=              " Clear statusline
+  set statusline+=[%n]         " Buffer number
+  set statusline+=\ [%F]       " Filename
+  set statusline+=\ [%{&ff}\|  " File format
+  set statusline+=%{&fenc}]    " File encoding
+  set statusline+=\ %y         " Filetype
+  set statusline+=%m           " Modified flag
+  set statusline+=%r           " Read-only flag
+  set statusline+=%=           " Separator
+  set statusline+=[%c,         " Column
+  set statusline+=%l/%L]       " Current line/Total lines
+endif
