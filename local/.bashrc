@@ -32,4 +32,5 @@ export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 
 # VDPAU (open-source driver)
 # https://wiki.archlinux.org/index.php/VDPAU
-VDPAU_DRIVER=r600
+export LIBVA_DRIVER_NAME=vdpau
+export VDPAU_DRIVER=r600
