@@ -27,12 +27,12 @@ export TERM=xterm-256color
 # Default editor
 export EDITOR=vim
 
-# Ruby executable path
-export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
-
 # Ruby gems path
-export GEM_HOME=$HOME/.gem/ruby/2.2.0/gems
-export GEM_PATH=$GEM_HOME
+export GEM_HOME=$HOME/.gem/ruby/2.2.0
+export GEM_PATH=$GEM_HOME/gems
+
+# Ruby executable path
+export PATH=$PATH:$GEM_HOME/bin
 
 # VDPAU (open-source driver)
 # https://wiki.archlinux.org/index.php/VDPAU
