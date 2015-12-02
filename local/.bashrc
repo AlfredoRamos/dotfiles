@@ -30,6 +30,10 @@ export EDITOR=vim
 # Ruby executable path
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 
+# Ruby gems path
+export GEM_HOME=$HOME/.gem/ruby/2.2.0/gems
+export GEM_PATH=$GEM_HOME
+
 # VDPAU (open-source driver)
 # https://wiki.archlinux.org/index.php/VDPAU
 export LIBVA_DRIVER_NAME=vdpau
