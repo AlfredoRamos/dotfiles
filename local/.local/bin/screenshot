@@ -1,0 +1,203 @@
+#!/bin/bash --
+
+#
+# $HOME/.local/bin/screenshot
+# https://gist.github.com/AlfredoRamos/49bf5767cc7073d9c61f
+#
+
+# Do not change
+app_name=$(printf "${0}" | sed -r 's|[./]||g')
+version=0.1.4
+args=(${@})
+opts=()
+
+# Terminal colors
+color_reset='\e[0m'
+bold_green='\e[1;32m'
+bold_blue='\e[1;34m'
+bold_white='\e[1;37m'
+bold_yellow='\e[1;33m'
+bold_red='\e[1;31m'
+
+# File name
+date_format=$(printf "$(date +'%F %T %z')" | sed -r 's/[-:+]//g')
+file_name_format=$(printf "screenshot ${date_format}.png" | sed -r 's/ /_/g')
+file_path="${HOME}/Pictures/Screenshots"
+file_name="${file_path}/${file_name_format}"
+
+# Print copyright
+print_copyright() {
+	message "${app_name} ${version}"
+	message
+	message 'Screenshot tool'
+	message
+	message 'Copyright (C) 2015 Alfredo Ramos'
+	message
+	message 'This is free software; see the source for copying conditions. There is NO'
+	message 'WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.'
+	message 'See the GNU General Public License version 3 for more details.'
+}
+
+# Print version and exit
+print_version() {
+	message "${app_name} ${version}"
+}
+
+# Print help and exit
+print_help() {
+	print_copyright
+	message
+	message "Usage: ${app_name} [<options>]"
+	message
+	message 'Options:'
+	message "\t--type=<full|region>"
+	message "\t\tScreenshot type. If this option is not set or has an invalid value,"
+	message "\t\tit will take a full screenshot."
+	message
+	message "\t--version"
+	message "\t\tDisplay the version of this script."
+	message
+	message "\t--help"
+	message "\t\tDisplay this information."
+}
+
+# Heading
+# Usage: heading <text> [<type> <newline>]
+heading() {
+	local color=${color_reset}		# normal
+	
+	case "${2}" in
+		i) color=${bold_blue};;		# info
+		s) color=${bold_green};;	# success
+		w) color=${bold_yellow};;	# warning
+		e) color=${bold_red};;		# error
+	esac
+	
+	local msg="${color}==>${color_reset} ${bold_white}${1}${color_reset}"
+	
+	# If ${3} is false do not output the trailing newline
+	if [[ ${3} != false ]]; then
+		msg+='\n'
+	fi
+	
+	printf "${msg}"
+}
+
+# Subheading
+# Usage: subheading <text> [<type> <newline>]
+subheading() {
+	local color=${color_reset}		# normal
+	
+	case "${2}" in
+		i) color=${bold_blue};;		# info
+		s) color=${bold_green};;	# success
+		w) color=${bold_yellow};;	# warning
+		e) color=${bold_red};;		# error
+	esac
+	
+	local msg=" ${color}->${color_reset} ${bold_white}${1}${color_reset}"
+	
+	# If ${3} is false do not output the trailing newline
+	if [[ ${3} != false ]]; then
+		msg+='\n'
+	fi
+	
+	printf "${msg}"
+}
+
+# Message
+# Usage: message <text> [<type> <newline>]
+message() {
+	local color=${color_reset}		# normal
+	
+	case "${2}" in
+		i) color=${bold_blue};;		# info
+		s) color=${bold_green};;	# success
+		w) color=${bold_yellow};;	# warning
+		e) color=${bold_red};;		# error
+	esac
+	
+	local msg="${color}${1}${color_reset}"
+	
+	# If ${3} is false do not output the trailing newline
+	if [[ ${3} != false ]]; then
+		msg+='\n'
+	fi
+	
+	printf "${msg}"
+}
+
+# Save screenshot (GraphicsMagick call)
+# Usage: save_screenshot <type>
+save_screenshot() {
+	if [[ "${1}" = "region" ]]; then
+		# Region
+		gm import ${file_name}
+	else
+		# Full
+		gm import -window root ${file_name}
+	fi
+}
+
+# Screenshot function helper
+# Usage: take_screenshot <type>
+take_screenshot() {
+	heading 'Taking screenshot' i
+	
+	# Print file path
+	subheading "Screenshot path:\t" i false
+	message "${file_path}"
+	
+	# Print file name
+	subheading "Filename:\t\t" i false
+	message "${file_name_format}"
+	
+	# Print screenshot type
+	subheading "Type:\t\t" i false
+	message "${1}"
+	
+	# Save screenshot file
+	save_screenshot "${1}"
+	
+	# Print status
+	subheading "Status:\t\t" i false
+	
+	if [[ -f "${file_name}" ]]; then
+		message 'done' s
+	else
+		message 'fail' e
+	fi
+}
+
+# Main function
+main() {
+	# The magic starts here
+	for i in ${args[@]} ; do
+		# Only flags like --example will be saved
+		if [[ "${i}" =~ ^--[a-zA-Z0-9] ]]; then
+			opts+=("${i}")
+		fi
+	done
+	
+	# If no options were given (or they were invalid)
+	# Assign default actions
+	if [[ ${#opts[@]} -eq 0 ]]; then
+		opts+=('--type=full')
+	fi
+
+	# Option check
+	for opt in ${opts[@]} ; do
+		case "${opt}" in
+			--version)	print_version;;
+			--help)		print_help;;
+		esac
+		
+		if [[ "${opt}" =~ ^--type ]]; then
+			local type=$(printf '%s' "${opt}" | sed -r 's/\-\-type=([a-zA-Z]+)/\1/')
+			take_screenshot "${type}"
+		fi
+	done
+}
+
+# Main function call
+main
