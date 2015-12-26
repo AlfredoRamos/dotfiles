@@ -34,6 +34,9 @@ export GEM_PATH=$GEM_HOME/gems
 # Ruby executable path
 export PATH=$PATH:$GEM_HOME/bin
 
+# User local apps
+export PATH=$PATH:$HOME/.local/bin
+
 # VDPAU (open-source driver)
 # https://wiki.archlinux.org/index.php/VDPAU
 export LIBVA_DRIVER_NAME=vdpau
