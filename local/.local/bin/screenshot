@@ -6,7 +6,7 @@
 #
 
 # Do not change
-app_name=$(printf "${0}" | sed -r 's|[./]||g')
+app_name=$(basename "${0}")
 version=0.1.4
 args=(${@})
 opts=()
@@ -26,7 +26,7 @@ file_path="${HOME}/Pictures/Screenshots"
 file_name="${file_path}/${file_name_format}"
 
 # Print copyright
-print_copyright() {
+copyright() {
 	message "${app_name} ${version}"
 	message
 	message 'Screenshot tool'
@@ -39,13 +39,13 @@ print_copyright() {
 }
 
 # Print version and exit
-print_version() {
+version() {
 	message "${app_name} ${version}"
 }
 
 # Print help and exit
-print_help() {
-	print_copyright
+help() {
+	copyright
 	message
 	message "Usage: ${app_name} [<options>]"
 	message
@@ -188,8 +188,8 @@ main() {
 	# Option check
 	for opt in ${opts[@]} ; do
 		case "${opt}" in
-			--version)	print_version;;
-			--help)		print_help;;
+			--version)	version;;
+			--help)		help;;
 		esac
 		
 		if [[ "${opt}" =~ ^--type ]]; then
