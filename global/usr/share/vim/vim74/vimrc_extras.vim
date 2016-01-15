@@ -7,7 +7,11 @@ set number
 
 " Set Monokai color scheme
 " https://aur.archlinux.org/packages/vim-monokai-git
-colorscheme monokai
+" colorscheme monokai
+
+" Set Tomorrow Night Eighties color scheme
+" https://aur.archlinux.org/packages/tomorrow-theme-vim-git/
+colorscheme Tomorrow-Night-Eighties
 
 " Enable system's clipboard
 if has('clipboard')
