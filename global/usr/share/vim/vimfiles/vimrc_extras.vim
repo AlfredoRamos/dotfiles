@@ -2,10 +2,6 @@
 " Maintainer: Alfredo Ramos <alfredo.ramos@yandex.com>
 " Last change: 2016-01-15
 
-"
-" /usr/share/vim/vimfiles/vimrc_extras.vim
-"
-
 " Show line number
 set number
 

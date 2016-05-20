@@ -1,7 +1,3 @@
-#
-# /etc/pgl/blocklists.list
-#
-
 # blocklists.list - lists the remote blocklists that pglcmd handles.
 
 # Place one URL per line for every blocklist.

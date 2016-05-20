@@ -1,7 +1,3 @@
-#
-# $HOME/.gtkrc-2.0-lxqt
-#
-
 include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
 include "/usr/share/gtk-2.0/gtkrc"
 

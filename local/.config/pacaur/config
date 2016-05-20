@@ -1,7 +1,3 @@
-#!/bin/bash --
-
-#
-# $XDG_CONFIG_HOME/pacaur/config
-#
+#!/bin/bash
 
 displaybuildfiles=none	# display build files (none|diff|full)
