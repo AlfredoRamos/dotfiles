@@ -91,7 +91,9 @@ function add_file(s)
     s[sec] = ""
 
     append_property(s, sec, "filename", {prefix="File:", nl="", indent=""})
-    append_property(s, sec, "metadata/title", {prefix="Title:"})
+    if not (mp.get_property_osd("filename") == mp.get_property_osd("media-title")) then
+        append_property(s, sec, "media-title", {prefix="Title:"})
+    end
     append_property(s, sec, "chapter", {prefix="Chapter:"})
     if append_property(s, sec, "cache-used", {prefix="Cache:"}) then
         append_property(s, sec, "demuxer-cache-duration",
@@ -152,7 +154,7 @@ function add_video(s)
     end
     append_property(s, sec, "window-scale", {prefix="Window Scale:"})
     append_property(s, sec, "video-params/aspect", {prefix="Aspect Ratio:"})
-    append_property(s, sec, "video-params/pixelformat", {prefix="Pixel format:"})
+    append_property(s, sec, "video-params/pixelformat", {prefix="Pixel Format:"})
     append_property(s, sec, "video-params/colormatrix", {prefix="Colormatrix:"})
     append_property(s, sec, "video-params/primaries", {prefix="Primaries:"})
     append_property(s, sec, "video-params/gamma", {prefix="Gamma:"})
@@ -286,7 +288,7 @@ function b(t)
 end
 
 
-local timer = mp.add_periodic_timer(o.redraw_delay - 0.1, function() print_stats(o.redraw_delay) end)
+local timer = mp.add_periodic_timer(o.redraw_delay, function() print_stats(o.redraw_delay + 1) end)
 timer:kill()
 
 function toggle_stats()
@@ -295,7 +297,7 @@ function toggle_stats()
         mp.osd_message("", 0)
     else
         timer:resume()
-        print_stats(o.redraw_delay)
+        print_stats(o.redraw_delay + 1)
     end
 end
 
@@ -303,8 +305,14 @@ end
 mp.add_key_binding(o.key_oneshot, "display_stats", print_stats, {repeatable=true})
 if pcall(function() timer:is_enabled() end) then
     mp.add_key_binding(o.key_toggle, "display_stats_toggle", toggle_stats, {repeatable=false})
+    mp.register_event("video-reconfig",
+                    function()
+                        if timer:is_enabled() then
+                            print_stats(o.redraw_delay + 1)
+                        end
+                    end)
 else
     local txt = "Please upgrade mpv to toggle stats"
     mp.add_key_binding(o.key_toggle, "display_stats_toggle",
-                       function() print(txt) ; mp.osd_message(txt) end, {repeatable=false})
+                    function() print(txt) ; mp.osd_message(txt) end, {repeatable=false})
 end
