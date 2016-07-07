@@ -3,8 +3,9 @@
 # Place one URL per line for every blocklist.
 # Any line which starts with a # (hash) is a comment and is ignored.
 
-# Have a look at /usr/share/doc/pglcmd/README.blocklists.gz for detailed
-# information about some available blocklists.
+# Have a look at /usr/share/doc/pglcmd/README.blocklists.gz for some hints
+# about some available blocklist providers. Neither do we recommend any
+# blocklist provider, nor do we even know much about them.
 
 # Instead or additionally to the remote blocklists that are specified here, you
 # can put local blocklists in LOCAL_BLOCKLIST_DIR (/etc/pgl/blocklists.local/).
@@ -16,7 +17,9 @@
 # Do a "pglcmd reload" (or "restart" or "update") when you have edited this
 # file.
 
-# http://list.iblocklist.com/lists/atma/atma
+# The following blocklist setting may be useful or not, good or bad. Most
+# probably it is outdated:
+
 http://list.iblocklist.com/lists/bluetack/ads-trackers-and-bad-pr0n
 http://list.iblocklist.com/lists/bluetack/bad-peers
 http://list.iblocklist.com/lists/bluetack/bogon
@@ -33,7 +36,7 @@ http://list.iblocklist.com/lists/bluetack/hijacked
 # http://list.iblocklist.com/lists/bluetack/level-3
 # http://list.iblocklist.com/lists/bluetack/microsoft
 http://list.iblocklist.com/lists/bluetack/proxy
-# http://list.iblocklist.com/lists/bluetack/range-test
+http://list.iblocklist.com/lists/bluetack/range-test
 http://list.iblocklist.com/lists/bluetack/spider
 http://list.iblocklist.com/lists/bluetack/spyware
 http://list.iblocklist.com/lists/bluetack/web-exploit
@@ -43,12 +46,5 @@ http://list.iblocklist.com/lists/dchubad/faker
 http://list.iblocklist.com/lists/dchubad/hacker
 http://list.iblocklist.com/lists/dchubad/pedophiles
 http://list.iblocklist.com/lists/dchubad/spammer
-# http://list.iblocklist.com/lists/peerblock/rapidshare
+http://list.iblocklist.com/lists/peerblock/rapidshare
 # http://list.iblocklist.com/lists/spamhaus/drop
-http://list.iblocklist.com/lists/tbg/bogon
-# http://list.iblocklist.com/lists/tbg/business-isps
-# http://list.iblocklist.com/lists/tbg/educational-institutions
-# http://list.iblocklist.com/lists/tbg/general-corporate-ranges
-http://list.iblocklist.com/lists/tbg/hijacked
-# http://list.iblocklist.com/lists/tbg/primary-threats
-# http://list.iblocklist.com/lists/tbg/search-engines
