@@ -1,6 +1,20 @@
 " Set and override default options
 " Maintainer: Alfredo Ramos <alfredo.ramos@yandex.com>
-" Last change: 2016-01-15
+" Last change: 2016-09-16
+
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
+
+" Keep a backup file (restore to previous version)
+set backup
+
+" Keep an undo file (undo changes after closing)
+if has('persistent_undo')
+  set undofile
+endif
+
+" Always set autoindenting on
+set autoindent
 
 " Show line number
 set number
