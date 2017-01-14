@@ -24,7 +24,7 @@ export TERM=xterm-256color
 export EDITOR=vim
 
 # Ruby gems path
-export GEM_HOME=$HOME/.gem/ruby/2.3.0
+export GEM_HOME=$HOME/.gem/ruby/2.4.0
 export GEM_PATH=$GEM_HOME/gems
 
 # Ruby executable path
