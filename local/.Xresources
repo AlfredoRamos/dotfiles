@@ -57,3 +57,6 @@ URxvt.scrollBar:    false
 ! Transparency
 URxvt.transparent:  true
 URxvt.shading:      20
+
+! Cursor
+Xcursor.theme:      Breeze
