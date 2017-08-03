@@ -157,4 +157,4 @@ bar {
 }
 
 # Background
-exec --no-startup-id exec feh --bg-fill /home/abaddon/Pictures/Wallpapers/Rei_Ayanami_Eye.png
+exec --no-startup-id ~/.fehbg
