@@ -1,0 +1,25 @@
+! Enabled modi
+rofi.modi: run,drun,window,combi
+
+! Font to use
+rofi.font: PT Mono 13
+
+! Glue Pro Blue by Rasi
+! https://davedavenport.github.io/rofi/p05-Themes.html
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+
+! Border width
+rofi.bw: 0
+
+! Location on screen
+rofi.location: 2
+
+! Y-offset relative to location
+rofi.yoffset: -2
+
+! Set the modi to combine in combi mode
+rofi.combi-modi: window,drun,run
