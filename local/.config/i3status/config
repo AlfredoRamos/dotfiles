@@ -27,7 +27,7 @@ cpu_usage {
 }
 
 load {
-	format = "%1min"
+	format = "L: %1min"
 }
 
 disk "/" {
