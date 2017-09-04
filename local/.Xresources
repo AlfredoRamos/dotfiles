@@ -49,6 +49,7 @@ URxvt.color7:       t_selection
 URxvt.color15:      t_current_line
 
 ! Font
+! ttf-paratype
 URxvt.font:         xft:PT Mono:size=13
 
 ! Scrollbar
@@ -59,4 +60,15 @@ URxvt.transparent:  true
 URxvt.shading:      20
 
 ! Cursor
+! xcursor-breeze
 Xcursor.theme:      Breeze
+
+! Copy/Paste/Select
+! urxvt-perls
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: default,clipboard,keyboard-select
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
