@@ -14,4 +14,4 @@ ConnectTimeout=60
 # Ignore the specified packages when checking for updates. Multiple arguments
 # to this option should be space delimited. Similar to the --ignore option,
 # this is in addition to any packages found in pacman's config.
-IgnorePkg=vim-git vim-runtime-git
+IgnorePkg=vim-git vim-runtime-git weechat-git
