@@ -148,3 +148,6 @@ bar {
 
 # Background
 exec --no-startup-id ~/.fehbg
+
+# Disable window focus with mouse
+focus_follows_mouse no
