@@ -37,3 +37,6 @@ export PATH="${PATH}":"${HOME}"/.local/bin
 # https://wiki.archlinux.org/index.php/VDPAU
 export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=r600
+
+# AUR helper (aurman)
+alias aurman='aurman --aur --noedit'
