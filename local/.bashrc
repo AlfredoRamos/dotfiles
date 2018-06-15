@@ -39,4 +39,4 @@ export LIBVA_DRIVER_NAME=vdpau
 export VDPAU_DRIVER=r600
 
 # AUR helper (aurman)
-alias aurman='aurman --aur --noedit'
+alias aurman='aurman --noedit'
