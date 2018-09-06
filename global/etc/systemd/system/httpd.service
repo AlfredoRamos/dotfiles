@@ -1,5 +1,0 @@
-.include /usr/lib/systemd/system/httpd.service
-
-[Unit]
-Wants=pgl.service
-After=pgl.service
