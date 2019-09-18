@@ -23,17 +23,9 @@ export TERM=xterm-256color
 # Default editor
 export EDITOR=vim
 
-# Ruby gems path
-export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
-export GEM_PATH="${GEM_HOME}"/gems
-
-# Ruby executable path
-export PATH="${PATH}":"${GEM_HOME}"/bin
-
 # User local apps
 export PATH="${PATH}":"${HOME}"/.local/bin
 
-# VDPAU (open-source driver)
-# https://wiki.archlinux.org/index.php/VDPAU
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=r600
+# VA-API
+# https://wiki.archlinux.org/index.php/Hardware_video_acceleration
+export LIBVA_DRIVER_NAME=radeonsi
