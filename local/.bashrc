@@ -23,6 +23,9 @@ export TERM=xterm-256color
 # Default editor
 export EDITOR=vim
 
+# RubyGems
+export PATH="${PATH}":"$(ruby -e 'puts Gem.user_dir')"/bin
+
 # User local apps
 export PATH="${PATH}":"${HOME}"/.local/bin
 
