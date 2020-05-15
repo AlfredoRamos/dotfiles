@@ -29,6 +29,6 @@ export PATH="${PATH}":"$(ruby -e 'puts Gem.user_dir')"/bin
 # User local apps
 export PATH="${PATH}":"${HOME}"/.local/bin
 
-# VA-API
+# VDPAU
 # https://wiki.archlinux.org/index.php/Hardware_video_acceleration
-export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=radeonsi
