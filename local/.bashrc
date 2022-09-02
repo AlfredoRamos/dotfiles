@@ -3,7 +3,7 @@
 
 alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
-PS1='[\[\e[01;38;5;74m\]\u\[\e[0m\]@\[\e[1;38;5;146m\]\h\[\e[0m\] \W]\[\e[1;92m\]\$\[\e[0m\] '
+PS1='[\[\e[01;38;5;74m\]\u\[\e[0m\]@\[\e[1;38;5;146m\]\h\[\e[0m\] \W\[\e[38;5;214m\]$(__git_ps1 " (%s)")\[\e[0m\]]\[\e[1;92m\]\$\[\e[0m\] '
 
 # Man pages
 man() {
@@ -23,8 +23,8 @@ export TERM=xterm-256color
 # Default editor
 export EDITOR=vim
 
-# RubyGems
-export PATH="${PATH}":"$(ruby -e 'puts Gem.user_dir')"/bin
+# Go
+export PATH="${PATH}":"${HOME}"/go/bin
 
 # User local apps
 export PATH="${PATH}":"${HOME}"/.local/bin
@@ -32,3 +32,13 @@ export PATH="${PATH}":"${HOME}"/.local/bin
 # VDPAU
 # https://wiki.archlinux.org/index.php/Hardware_video_acceleration
 export VDPAU_DRIVER=radeonsi
+
+# Git
+. /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM=true
+
+# ASDF
+. /opt/asdf-vm/asdf.sh
