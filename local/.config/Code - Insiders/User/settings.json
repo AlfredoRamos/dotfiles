@@ -1,0 +1,60 @@
+{
+	"workbench.productIconTheme": "icons-octicons",
+	"editor.renderWhitespace": "all",
+	"editor.linkedEditing": true,
+	"workbench.startupEditor": "none",
+	"telemetry.telemetryLevel": "off",
+	"intelephense.telemetry.enabled": false,
+	"telemetry.enableTelemetry": false,
+	"intelephense.environment.shortOpenTag": false,
+	"window.dialogStyle": "custom",
+	"window.titleBarStyle": "custom",
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"erb": "html"
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.fontFamily": "Menlo, Consolas, DejaVu Sans Mono, monospace",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"window.restoreWindows": "none",
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"eslint.format.enable": true,
+	"explorer.compactFolders": false,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+	"ruby.rubocop.executePath": "/home/alfredo/.asdf/shims/",
+	"editor.insertSpaces": false,
+	"workbench.colorTheme": "Sublime Text 4 Theme",
+	"cmake.configureOnOpen": true,
+	"explorer.confirmDelete": false,
+	"window.commandCenter": true,
+	"redhat.telemetry.enabled": false,
+	"explorer.confirmDragAndDrop": false,
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"go.toolsManagement.autoUpdate": true,
+	"editor.formatOnSave": true,
+	"update.showReleaseNotes": false,
+	"go.diagnostic.vulncheck": "Imports",
+	"go.survey.prompt": false,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"inlineChat.holdToSpeech": false
+}

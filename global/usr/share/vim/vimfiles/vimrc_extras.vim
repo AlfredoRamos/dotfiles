@@ -1,5 +1,5 @@
 " Set and override default options
-" Maintainer: Alfredo Ramos <alfredo.ramos@skiff.com>
+" Maintainer: Alfredo Ramos <alfredo.ramos@proton.me>
 " Last change: 2016-09-16
 
 " Get the defaults that most users want.
